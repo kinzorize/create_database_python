@@ -74,3 +74,8 @@ try:
 except psycopg2.Error as e:
     print("Error: Inserting Rows")
     print(e)
+
+# close the connection and cursor
+
+cur.close()
+conn.close()
