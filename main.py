@@ -75,6 +75,19 @@ except psycopg2.Error as e:
     print("Error: Inserting Rows")
     print(e)
 
+# validate the data inserted into our table
+try:
+    cur.execute("SELECT * FRO, students;")
+except psycopg2.Error as e:
+    print("Error: select")
+    print(e)
+
+row = cur.fetchone()
+while row:
+    print(row)
+    row = cur.fetchone()
+
+
 # close the connection and cursor
 
 cur.close()
